@@ -35,15 +35,12 @@
 
 .column .card .container {
   padding: 2px 16px;
+  position: relative;
+  display: none;
 }
 
 .row:after {
     content: "";
     display: table;
     clear: both;
-}
-
-.container {
-    position: relative;
-    display: none;
 }
