@@ -17,7 +17,6 @@
 
 
 .column .card img {
-    opacity: 0.8;
     cursor: pointer;
     border-radius: 5px 5px 0 0;
     width: 250px;
@@ -29,14 +28,13 @@
 }
 
 .column .card img:hover {
-    opacity: 1;
     border: 2px solid white;
 }
 
 .column .card .container {
-  padding: 2px 16px;
   position: relative;
-  display: none;
+  text-align: center;
+  visibility: hidden;
 }
 
 .row:after {
