@@ -1,0 +1,43 @@
+<html>
+  <head>
+      <link rel="stylesheet" href="css/body.css">
+      <link rel="stylesheet" href="css/card.css">
+      <link rel="stylesheet" href="css/menu.css">
+      <link rel="stylesheet" href="css/background.css">
+      <link rel="stylesheet" href="css/footer.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/jszip/2.4.0/jszip.min.js"></script>
+      <script src="template.zip.js"></script>
+      <script src="script/main.js"></script>
+      <script type="text/javascript" src="script/main.js"></script>
+  </head>
+  <body>
+      <div class="navbar">
+        <ul>
+          <li id="BIO"><a href="index.html"><b>Biografia</b></a></li>
+          <li id="LETRA"><a href="tutoriais.html" class="active"><b>Tutoriais</b></a></li>
+          <li id="GALERIA"><a href="index.html"><b>Projetos</b></a></li>
+        </ul>
+      </div>
+
+      <div id="CARD">
+        <div class="content">
+          <h3>Name:</h3>
+          <input id="name" placeholder="Example Addon"><br><br>
+          <div class="desc">This is the name that shows up in BlockLauncher's manage addons page.</div>
+          <h3>Package:</h3>
+          <input id="package" placeholder="com.example.addon"><br><br>
+          <div class="desc">This is a name that must be unique to your package (Should be in all lowercase). No other package can have this name.
+          <h3>MCPE Version:</h3>
+          <input id="mcpeversion" placeholder="1.12.2"><br><br>
+          <div class="desc">This is the Minecraft PE version that your mod will be compatible with.</div><br>
+          <input id="generatebutton" type="Submit" value="Generate!">
+        </div>
+      </div>
+
+      <div class="footer">
+        <a href="#" onclick="goto('https://twitter.com/kratosyt21')"><i class="fa fa-twitter"></i></a>
+        <a href="#" onclick="goto('https://github.com/marcoSource')"><i class="fa fa-github"></i></a>
+      </div>
+  </body>
+</html>

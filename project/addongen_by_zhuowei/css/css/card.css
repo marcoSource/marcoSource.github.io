@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+
+.column {
+    float: left;
+    width: 20%;
+    padding: 10px;
+}
+
+.column .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 250px;
+    border-radius: 5px;
+}
+
+
+.column .card img {
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+    width: 250px;
+    height: 250px;
+}
+
+.column .card:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.column .card .container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}

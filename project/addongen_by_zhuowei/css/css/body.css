@@ -1,0 +1,19 @@
+body {
+  margin: 0px;
+  font-family: "Segoe UI";
+}
+
+.row {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.column {
+  margin-top: 50px;
+}
+
+p {
+  content: "";
+  margin: 3px;
+  display: block;
+}
