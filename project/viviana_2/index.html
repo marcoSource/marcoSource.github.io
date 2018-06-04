@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="css/galery.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <script type="text/javascript" src="script/modal_trigger.js"></script>
+  </head>
+
+  <div class="row">
+    <div class="column">
+      <img id="1" src="assets/1.jpg" alt="Tiago" style="width:100%" onclick="show();">
+    </div>
+    <div class="column">
+      <img src="assets/2.jpg" alt="Banda Toranja" style="width:100%" >
+    </div>
+    <div class="column">
+      <img src="assets/3.jpg" alt="Acustico" style="width:100%" onclick="goToWebsite('https://open.spotify.com/album/1QIdUxyBjo25ijSasf5aoc?si=4DPYxwH9QsODf8uJQjissw');">
+    </div>
+    <div class="column">
+      <img src="assets/4.jpg" alt="Em Fuga" style="width:100%" onclick="goToWebsite('https://open.spotify.com/album/5woc4iiSyYZM6TNh9BTYGV?si=jDnydXL4Tuqy4XeDeoAbGA');">
+    </div>
+    <div class="column">
+      <img src="assets/5.jpg" alt="Principio" style="width:100%" onclick="goToWebsite('https://open.spotify.com/album/7cYv9V8cH4EAUmOnk3zGkW?si=T_PMU9TjQYq2RLMK2BNtAg')">
+    </div>
+  </div>
+  <div class="row">
+    <div class="column">
+      <img src="assets/6.jpg" alt="Tiago Na Toca" style="width:100%" onclick="goToWebsite('https://open.spotify.com/album/77efyCksippvCSXZvui8PY?si=qExC8HnUQnaLlSsIHczMhw');">
+    </div>
+    <div class="column">
+      <img src="assets/7.jpg" alt="Tiago E os Mantha" style="width:100%" onclick="goToWebsite('https://tiagobettencourtemantha.blogs.sapo.pt/');">
+    </div>
+    <div class="column">
+      <img src="assets/8.jpg" alt="A Procura" style="width:100%" onclick="goToWebsite('https://open.spotify.com/album/03tvDscBXA3Zypa12jWECO?si=6FNRJUQ8T1KUY4N8PUESjA');">
+    </div>
+    <div class="column">
+      <img src="assets/9.jpg" alt="A Procura" style="width:100%" onclick="goToWebsite('https://open.spotify.com/album/03tvDscBXA3Zypa12jWECO?si=6FNRJUQ8T1KUY4N8PUESjA');">
+    </div>
+    <div class="column">
+      <img src="assets/10.jpg" alt="A Procura" style="width:100%" onclick="goToWebsite('https://open.spotify.com/album/03tvDscBXA3Zypa12jWECO?si=6FNRJUQ8T1KUY4N8PUESjA');">
+    </div>
+  </div>
+
+  <!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close" onclick="close();">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
+</html>
