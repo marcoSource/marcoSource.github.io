@@ -1,13 +1,15 @@
-function show(){
-  var modal = document.getElementById('myModal');
+function preencherModelo(imgID, desc){
+  var modelo = document.getElementById('modelo');
 
-  var img = document.getElementById('1');
-  var modalImg = document.getElementById("img01");
-  var captionText = document.getElementById("caption");
+  var imagem = document.getElementById(imgID);
+  var imagemModelo = document.getElementById("imagem");
+  var titulo = document.getElementById("titulo");
+  var descricao = document.getElementById('desc');
   img.onclick = function(){
-      modal.style.display = "block";
-      modalImg.src = this.src;
-      captionText.innerHTML = this.alt;
+      modelo.style.display = "block";
+      imagemModelo.src = this.src;
+      titulo.innerHTML = this.alt;
+      descricao.innerHTML = desc;
   }
 }
 

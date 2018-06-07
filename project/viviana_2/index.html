@@ -8,44 +8,47 @@
 
   <div class="row">
     <div class="column">
-      <img id="1" src="assets/1.jpg" alt="Tiago" style="width:100%" onclick="show();">
+      <img id="1" src="assets/1.jpg" alt="Nature" style="width:100%" onclick="preencherModelo(this.id, Nature cant be better than this.)">
     </div>
     <div class="column">
-      <img src="assets/2.jpg" alt="Banda Toranja" style="width:100%" >
+      <img id="2" src="assets/2.jpg" alt="Banda Toranja" style="width:100%" onclick="show(this.id);">
     </div>
     <div class="column">
-      <img src="assets/3.jpg" alt="Acustico" style="width:100%" onclick="goToWebsite('https://open.spotify.com/album/1QIdUxyBjo25ijSasf5aoc?si=4DPYxwH9QsODf8uJQjissw');">
+      <img id="3" src="assets/3.jpg" alt="Acustico" style="width:100%" onclick="show(this.id);">
     </div>
     <div class="column">
-      <img src="assets/4.jpg" alt="Em Fuga" style="width:100%" onclick="goToWebsite('https://open.spotify.com/album/5woc4iiSyYZM6TNh9BTYGV?si=jDnydXL4Tuqy4XeDeoAbGA');">
+      <img id="4" src="assets/4.jpg" alt="Em Fuga" style="width:100%" onclick="show(this);">
     </div>
     <div class="column">
-      <img src="assets/5.jpg" alt="Principio" style="width:100%" onclick="goToWebsite('https://open.spotify.com/album/7cYv9V8cH4EAUmOnk3zGkW?si=T_PMU9TjQYq2RLMK2BNtAg')">
+      <img src="assets/5.jpg" alt="Principio" style="width:100%" onclick="show();">
     </div>
   </div>
   <div class="row">
     <div class="column">
-      <img src="assets/6.jpg" alt="Tiago Na Toca" style="width:100%" onclick="goToWebsite('https://open.spotify.com/album/77efyCksippvCSXZvui8PY?si=qExC8HnUQnaLlSsIHczMhw');">
+      <img src="assets/6.jpg" alt="Tiago Na Toca" style="width:100%" onclick="show();">
     </div>
     <div class="column">
-      <img src="assets/7.jpg" alt="Tiago E os Mantha" style="width:100%" onclick="goToWebsite('https://tiagobettencourtemantha.blogs.sapo.pt/');">
+      <img src="assets/7.jpg" alt="Tiago E os Mantha" style="width:100%" onclick="show();"
     </div>
     <div class="column">
-      <img src="assets/8.jpg" alt="A Procura" style="width:100%" onclick="goToWebsite('https://open.spotify.com/album/03tvDscBXA3Zypa12jWECO?si=6FNRJUQ8T1KUY4N8PUESjA');">
+      <img src="assets/8.jpg" alt="A Procura" style="width:100%" onclick="show();">
     </div>
     <div class="column">
-      <img src="assets/9.jpg" alt="A Procura" style="width:100%" onclick="goToWebsite('https://open.spotify.com/album/03tvDscBXA3Zypa12jWECO?si=6FNRJUQ8T1KUY4N8PUESjA');">
+      <img src="assets/9.jpg" alt="A Procura" style="width:100%" onclick="show();">
     </div>
     <div class="column">
-      <img src="assets/10.jpg" alt="A Procura" style="width:100%" onclick="goToWebsite('https://open.spotify.com/album/03tvDscBXA3Zypa12jWECO?si=6FNRJUQ8T1KUY4N8PUESjA');">
+      <img src="assets/10.jpg" alt="A Procura" style="width:100%" onclick="show();">
     </div>
   </div>
 
   <!-- The Modal -->
-<div id="myModal" class="modal">
+<div id="modelo" class="modelo">
   <span class="close" onclick="close();">&times;</span>
-  <img class="modal-content" id="img01">
-  <div id="caption"></div>
+  <img class="imagem" id="imagem">
+  <div>
+    <h4 id="titulo"></h4>
+    <p id="desc"></p>
+  </div>
 </div>
 
 </html>

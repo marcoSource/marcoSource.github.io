@@ -1,4 +1,4 @@
-.modal {
+.modelo {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -13,7 +13,7 @@
 }
 
 /* Modal Content (image) */
-.modal-content {
+.imagem {
     margin: auto;
     display: block;
     width: 80%;
@@ -22,7 +22,7 @@
 
 
 /* Caption of Modal Image */
-#caption {
+#titulo {
     margin: auto;
     display: block;
     width: 80%;
