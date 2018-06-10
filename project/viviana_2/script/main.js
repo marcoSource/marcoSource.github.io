@@ -1,17 +1,17 @@
 function showModal(imgID){
   var src = "assets/";
-  var modelo = document.getElementById('modal');
+  var body = document.getElementById('body');
+  var modal = document.getElementById('mainModal');
   var imgInt = imgID;
   var img = document.getElementById(imgID);
   var modalImg = document.getElementById("img");
-  var caption = document.getElementById("caption");
   img.onclick = function(){
-      modelo.style.display = "block";
+      modal.style.display = "block";
       modalImg.src = this.src;
-      caption.innerHTML = this.alt;
+      body.style.overflow = "hidden";
   }
   onkeypress = function(event){
-    if(modelo.style.display == "block"){
+    if(modal.style.display == "block"){
       if(imgInt < 20)
         imgInt++;
       if(imgInt === 20)
@@ -22,5 +22,6 @@ function showModal(imgID){
 }
 
 function closeModal() {
-  document.getElementById('modal').style.display = "none";
+  document.getElementById('mainModal').style.display = "none";
+  document.getElementById('body').style.overflow = "auto";
 }
