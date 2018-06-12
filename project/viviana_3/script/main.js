@@ -9,6 +9,7 @@ function showModal(imgID){
       modal.style.display = "block";
       modalImg.src = this.src;
       body.style.overflow = "hidden";
+      rndBackground();
   }
   onkeypress = function(event){
     if(modal.style.display == "block"){
@@ -21,7 +22,29 @@ function showModal(imgID){
   }
 }
 
+function showTextOnOver(cardID){
+  var text = document.getElementById('t');
+  var cardImage = document.getElementById(cardID);
+  cardImage.onmouseover = function(){
+    text.style.display = "block";
+    text.innerHTML = cardImage.alt;
+  }
+
+  onmouseout = function(){
+    text.style.display = "none";
+  }
+}
+
 function closeModal() {
   document.getElementById('mainModal').style.display = "none";
   document.getElementById('body').style.overflow = "auto";
+}
+
+function rndBackground(){
+  var rndNumber = Math.floor(Math.random() * 10) + 1;
+  document.getElementById('body').style.backgroundImage = 'url("../assets/" + rndNumber + ".jpg")';
+}
+
+function goto(html){
+  window.location.href = html
 }

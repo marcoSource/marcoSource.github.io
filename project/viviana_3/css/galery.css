@@ -4,13 +4,12 @@
 
 .column {
     float: left;
-    width: 33.3%;
+    width: 25%;
     padding: 20px;
 }
 
 .column img {
     cursor: pointer;
-    height: 300px;
 }
 
 .column img:hover {

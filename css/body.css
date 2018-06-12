@@ -1,6 +1,7 @@
 body {
   margin: 0px;
   font-family: "Segoe UI";
+  background-image: url("../assets/images/new_background.jpg");
 }
 
 .row {
