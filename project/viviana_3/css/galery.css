@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+.column {
+    float: left;
+    width: 33.3%;
+    padding: 20px;
+}
+
+.column img {
+    cursor: pointer;
+    height: 300px;
+}
+
+.column img:hover {
+    border: 2px solid white;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.container {
+    position: relative;
+    display: none;
+}
