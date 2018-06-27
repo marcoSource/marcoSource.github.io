@@ -1,11 +1,20 @@
+var player;
+
 function setup(){
-  createCanvas(1000, 1000);
+  createCanvas(500, 500);
+  this.player = new Player(100, 100, "joel");
 }
 
 function draw(){
-  background(255, 0, 0);
-  fill(0, 255, 0);
-  stroke(0, 0, 255);
-  ellipse(mouseX, mouseY, 10, 10);
-  console.log(''+ mouseX + ' ' +  mouseY);
+  background(0);
+  this.player.render();
+  this.player.update();
+  setDataToHTML();
+}
+
+function setDataToHTML(){
+  document.getElementById('x').innerHTML = "X: " + this.player.getX();
+  document.getElementById('y').innerHTML = "Y: " + this.player.getY();
+  document.getElementById('name').innerHTML = "Name: " + this.player.getName();
+  document.getElementById('id').innerHTML = "ID: " + this.player.getID();
 }
