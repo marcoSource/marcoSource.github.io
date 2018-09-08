@@ -1,11 +1,6 @@
-// Daniel Shiffman
-// http://codingtra.in
-// http://patreon.com/codingtrain
-// Code for: https://youtu.be/AaGK-fj-BAM
-
-function Snake() {
-  this.x = 0;
-  this.y = 0;
+function Snake(x, y) {
+  this.x = x;
+  this.y = y;
   this.xspeed = 1;
   this.yspeed = 0;
   this.total = 0;
@@ -35,6 +30,7 @@ function Snake() {
         this.total = 0;
         this.tail = [];
         score = 0;
+        start = false;
       }
     }
   }
@@ -60,6 +56,9 @@ function Snake() {
       rect(this.tail[i].x, this.tail[i].y, scl, scl);
     }
     rect(this.x, this.y, scl, scl);
+  }
 
+  this.getTailCount = function(){
+    return this.total;
   }
 }
