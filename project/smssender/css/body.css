@@ -1,12 +1,13 @@
 body {
-  font-family: "Segoe UI";
+  font-family: "Nunito", Georgia, 'Times New Roman', Times, serif;
   margin: 0;
-  overflow: auto;
-  background: #e6e8ed;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
 }
 
 .header #titulo{
-  font-size: 80px;
+  font-size: 70px;
   width: auto;
   margin-top: auto;
   margin-bottom: auto;
@@ -16,7 +17,7 @@ body {
 .header a {
   padding: 5px;
   margin: 10px;
-  color: black;
+  color: white;
   font-size: 50px;
   text-align: center;
 }
@@ -25,7 +26,7 @@ body {
   width: 100%;
   min-height: 120px;
   position: relative;
-  color: black;
+  color: white;
 }
 
 .header #icons_bar {
@@ -42,13 +43,102 @@ body {
   margin-bottom: auto;
   width: 700px;
   background-color: white;
+  border-radius: 30px;
 }
 
 .policy p {
-  top: 20px;
-  margin-left: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: black;
 }
 
 .policy h2 {
-  margin: 10px;
+  margin-top: 20px;
+  color: black;
+}
+
+.navbar {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.link {
+  bottom: 0px;
+  width: 100%;
+  height: 55px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.icon {
+  width: 400px;
+  height: 400px;
+  margin-top: 50px;
+  margin-left: 200px;
+  margin-bottom: 50px;
+}
+
+.about{
+  position: absolute;
+  top: 300px;
+  left: 800px;
+  background: white;
+  color: black;
+  width: 500px;
+  height: 400px;
+  border-radius: 20px;
+}
+
+.about h1 {
+  color: black;
+  font-size: 50px;
+}
+
+.about p {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+
+.what_does{
+  margin-left: 200px;
+  background: white;
+  color: black;
+  width: 500px;
+  height: 800px;
+  border-radius: 20px;
+}
+
+.what_does h1 {
+  color: black;
+  font-size: 50px;
+}
+
+.what_does p {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+
+.what_does ul {
+  list-style: circle;
+  color: black;
+}
+
+.what_does li {
+  display: block;
+  float: left;
+  clear: left;
+  margin-left: 40px;
+  font-size: 20px;
+}
+
+.screenshot_1 {
+  position: absolute;
+  top: 800px;
+  left: 800px;
+  width: 500px;
+  height: 740px;
 }

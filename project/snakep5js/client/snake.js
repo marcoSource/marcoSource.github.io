@@ -1,64 +1,72 @@
-function Snake(x, y) {
-  this.x = x;
-  this.y = y;
-  this.xspeed = 1;
-  this.yspeed = 0;
-  this.total = 0;
-  this.tail = [];
+class Snake {
 
-  this.eat = function(pos) {
-    var d = dist(this.x, this.y, pos.x, pos.y);
+  constructor(){
+    this.x = floor(w/2);
+    this.y = floor(h/2);
+    this.body = [];
+    this.body[0] = createVector(this.x, this.y);
+    this.xDir = 0;
+    this.yDir = 0;
+    this.len = 1;
+  }
+
+  update(){
+    for (let i = 0; i < this.body.length - 1; i++) {
+      this.body[i] = this.body[i + 1];
+    }
+    if (this.len >= 1) {
+      this.body[this.len - 1] = createVector(this.x, this.y);
+    }
+    this.x += this.xDir;
+    this.y += this.yDir; 
+  }
+
+  show(){
+    for(let i = 0; i < this.body.length; i++){
+      noStroke();
+      fill(255);
+      rect(this.body[i].x, this.body[i].y, 1, 1);
+    }
+    fill(255);
+    rect(this.x, this.y, 1, 1);
+  }
+
+  death(){
+    for (let i = 0; i < this.body.length; i++) {
+      let pos = this.body[i];
+      let d = dist(this.x, this.y, pos.x, pos.y);
+      if (d < 1 || this.x > w || this.x < 0 || this.y > h || this.y < 0) {
+        this.len = 0;
+        this.body = [];
+        setHiscore(score);
+        score = 0;
+        start = false;
+        this.returnPos();
+      }
+    }
+  }
+
+  eat(pos){
+    let d = dist(this.x, this.y, pos.x, pos.y);
     if (d < 1) {
-      this.total++;
+      this.len++;
       return true;
     } else {
       return false;
     }
   }
 
-  this.dir = function(x, y) {
-    this.xspeed = x;
-    this.yspeed = y;
+  setDir(x, y){
+    this.xDir = x;
+    this.yDir = y;
   }
 
-  this.death = function() {
-    for (var i = 0; i < this.tail.length; i++) {
-      var pos = this.tail[i];
-      var d = dist(this.x, this.y, pos.x, pos.y);
-      if (d < 1) {
-        console.log('starting over');
-        this.total = 0;
-        this.tail = [];
-        score = 0;
-        start = false;
-      }
-    }
+  returnPos(){
+    this.x = floor(w/2);
+    this.y = floor(h/2);
   }
 
-  this.update = function() {
-    for (var i = 0; i < this.tail.length - 1; i++) {
-      this.tail[i] = this.tail[i + 1];
-    }
-    if (this.total >= 1) {
-      this.tail[this.total - 1] = createVector(this.x, this.y);
-    }
-
-    this.x = this.x + this.xspeed * scl;
-    this.y = this.y + this.yspeed * scl;
-
-    this.x = constrain(this.x, 0, width - scl);
-    this.y = constrain(this.y, 0, height - scl);
-  }
-
-  this.show = function() {
-    fill(255);
-    for (var i = 0; i < this.tail.length; i++) {
-      rect(this.tail[i].x, this.tail[i].y, scl, scl);
-    }
-    rect(this.x, this.y, scl, scl);
-  }
-
-  this.getTailCount = function(){
-    return this.total;
+  getBodyCount(){
+    return this.len;
   }
 }

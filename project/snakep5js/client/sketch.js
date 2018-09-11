@@ -1,94 +1,104 @@
-var snk;
-var scl = 20;
-var food;
-var score = 0;
-//var playText;
-var canvas;
-var start = false;
-var cc;
-var scoreText;
+let snake;
+let res = 20;
+let food;
+let w;
+let h;
+let canvas;
+
+//Game variables
+let score = 0;
+let hiscore = 0;
+let start = false;
+
+//gui
+let scoreText;
 
 function windowResized(){
   resizeCanvas(windowWidth, windowHeight);
 }
 
 function setup() {
+  //SetCanvas
   canvas = createCanvas(windowWidth, windowHeight);
   canvas.position(0, 0);
   canvas.style('z-index', '-1');
-  snk = new Snake(0, 0);
+
+  //Game settings
   frameRate(10);
+  w = floor(width/res);
+  h = floor(height/res);
   pickLocation();
-  this.generateRandomColor();
-  scoreText = createElement('h1', '');
-  scoreText.style('color', '#ffffff');
-  scoreText.style('margin-right', '200px');
+  
+  //Init
+  snake = new Snake();
+  scoreText = new MSText("ola", 100, 100);
 }
 
 function pickLocation() {
-  var cols = floor(width/scl);
-  var rows = floor(height/scl);
-  food = createVector(floor(random(cols)), floor(random(rows)));
-  food.mult(scl);
+  let x = floor(random(w));
+  let y = floor(random(h));
+  food = createVector(x, y);
 }
 
 function draw() {
-  background(cc);
-  scoreText.html('Score: ' + score);
+  scale(res);
+  background(51);
   this.setSpeedByTailCount();
-  if(!start){
-  } else {
-    if (snk.eat(food)) {
+
+  scoreText.show();
+
+  snake.show();
+
+  if(start){
+    if (snake.eat(food)) {
       pickLocation();
-      increaseScoreWhenEat();
-      this.generateRandomColor();
+      score++;
     }
-    snk.death();
-    snk.update();
-    snk.show();
-    fill(255, 0, 100);
-    rect(food.x, food.y, scl, scl);
+    snake.death();
+    snake.update();
   }
+   
+  noStroke();
+  fill(255, 0, 100);
+  rect(food.x, food.y, 1, 1);
 }
 
 function keyPressed() {
-  if (keyCode === UP_ARROW) {
-    snk.dir(0, -1);
-    socket.emit("UP_ARROW", {newX : snk.x, newY: snk.y});
-  } else if (keyCode === DOWN_ARROW) {
-    snk.dir(0, 1);
-    socket.emit("DOWN_ARROW", {newX : snk.x, newY: snk.y});
-  } else if (keyCode === RIGHT_ARROW) {
-    snk.dir(1, 0);
-    socket.emit("RIGHT_ARROW", {newX : snk.x, newY: snk.y});
-  } else if (keyCode === LEFT_ARROW) {
-    snk.dir(-1, 0);
-    socket.emit("LEFT_ARROW", {newX : snk.x, newY: snk.y});
-  } else if(keyCode === 32) {
-    start = true;
+  switch(keyCode){
+    case UP_ARROW:
+      snake.setDir(0, -1);
+      //socket.emit("UP_ARROW", {newX : snake.x, newY: snake.y});
+    break;
+    case DOWN_ARROW:
+      snake.setDir(0, 1);
+      //socket.emit("DOWN_ARROW", {newX : snake.x, newY: snake.y});
+    break;
+    case LEFT_ARROW:
+      snake.setDir(-1, 0);
+      //socket.emit("RIGHT_ARROW", {newX : snake.x, newY: snake.y});
+    break;
+    case RIGHT_ARROW:
+      snake.setDir(1, 0);
+      //socket.emit("LEFT_ARROW", {newX : snake.x, newY: snake.y});
+    break;
+    case 32:
+      start = true;
+    break;
   }
-}
-
-function increaseScoreWhenEat(){
-  score++;
-}
-
-function generateRandomColor(){
-  var c = color(random(0, 255),random(0, 255),random(0,255));
-  this.cc = c;
-  return c;
 }
 
 function setSpeedByTailCount(){
-  if(snk != null){
-    var currentCount = snk.getTailCount();
-  } else {
-    return;
-  }
+  let currentCount = snake.getBodyCount();
   if(currentCount > 10){
     frameRate(15);
   } else if(currentCount > 20){
     frameRate(20);
   }
   frameRate(10);
+}
+
+function setHiscore(finalScore){
+  if(finalScore > hiscore){
+    hiscore = finalScore;
+  }
 }
