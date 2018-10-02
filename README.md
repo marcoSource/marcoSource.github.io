@@ -3,7 +3,7 @@
 ## Current Pages:
 
 * Projects:
-  * Snake game
+  * Snake game (In dev)
   * Sms Sender Application for Android
   * Template maker to Minecraft Bedrock Edition C++ mods (Block Launcher)
   
