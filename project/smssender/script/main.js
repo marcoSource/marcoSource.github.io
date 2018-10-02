@@ -53,8 +53,7 @@ function showDesc(v){
   let desc = document.getElementById('desc');
   document.getElementById('versiondesc').style.visibility = 'visible';
   if(v == 1){
-    desc.innerHTML = "First build with all the features presented in the home tab. If you dont know how to install, check the How to install tab";
-    
+    desc.innerHTML = "First build with all the features presented in the home tab. If you dont know how to install, check the How to install tab.";
   }
 }
 
